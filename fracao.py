@@ -1,7 +1,8 @@
 # Autor: Hallison Paz
 # Canal Python Café: https://youtube.com/pythoncafe
 # Programação Orientada a Objetos em Python
-# Vídeo: Classes | Orientação a Objetos #2
+# Vídeos: Classes | Orientação a Objetos #2
+#         Representando Objetos em Strings | Orientação a Objetos #3
 
 
 # Modelando uma fração
@@ -49,13 +50,19 @@ class Fracao:
     def simplificar(self):
         pass
 
+    # Representando Objetos em Strings | https://youtu.be/g9wIo-hBcgA
+    def __str__(self):
+        representation = "{}/{}".format(self.numerador, self.denominador)
+        return representation
+
+    def __repr__(self):
+        representation = "Fracao({}, {})".format(self.numerador,
+                                                self.denominador)
+        return representation
+
+
 # teste
 if __name__ == '__main__':
-    a = Fracao(4, 5)
-    b = Fracao(-2, 7)
-
-    resultado = a.multiplicar(b)
-    # b = Fracao.inverter(a)
-    c = a.inverter()
-    # palavra = "ninja"
-    # nova = palavra.upper()
+    primeira = Fracao(42, 57)
+    print(primeira)
+    print(primeira.numerador, primeira.denominador)
